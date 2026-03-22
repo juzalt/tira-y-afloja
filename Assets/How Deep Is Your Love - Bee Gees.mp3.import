@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvmfafycxqbvl"
+path="res://.godot/imported/How Deep Is Your Love - Bee Gees.mp3-b540ab744a02d48fd47b5157413b5289.mp3str"
+
+[deps]
+
+source_file="res://Assets/How Deep Is Your Love - Bee Gees.mp3"
+dest_files=["res://.godot/imported/How Deep Is Your Love - Bee Gees.mp3-b540ab744a02d48fd47b5157413b5289.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bjyuwp2jwxsd1"]
+
+[ext_resource type="Texture2D" uid="uid://4kdwyifscy7g" path="res://Assets/happy centro.png" id="1_oabld"]
+[ext_resource type="Script" uid="uid://dv2suatqi5hib" path="res://Perrito.gd" id="2_dgnvf"]
+[ext_resource type="AudioStream" uid="uid://dvmfafycxqbvl" path="res://Assets/How Deep Is Your Love - Bee Gees.mp3" id="3_nmcpg"]
+[ext_resource type="Script" uid="uid://dos3qhffr4v0a" path="res://addons/rhythm_notifier/rhythm_notifier.gd" id="4_splo0"]
+
+[node name="Background" type="Node2D" unique_id=1324150852]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1998520187]
+stream = ExtResource("3_nmcpg")
+volume_db = 1.0
+autoplay = true
+
+[node name="RhythmNotifier" type="Node" parent="AudioStreamPlayer" unique_id=1487480851 node_paths=PackedStringArray("audio_stream_player")]
+script = ExtResource("4_splo0")
+bpm = 105.0
+beat_length = 0.5714285714285714
+audio_stream_player = NodePath("..")
+running = true
+metadata/_custom_type_script = "uid://dos3qhffr4v0a"
+
+[node name="Perrito" type="Sprite2D" parent="." unique_id=121446372]
+position = Vector2(552.5, 308)
+scale = Vector2(0.867361, 0.766667)
+texture = ExtResource("1_oabld")
+script = ExtResource("2_dgnvf")

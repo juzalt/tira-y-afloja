@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://4kdwyifscy7g" path="res://Assets/happy centro.png" id="1_oabld"]
 [ext_resource type="Script" uid="uid://dv2suatqi5hib" path="res://Perrito.gd" id="2_dgnvf"]
+[ext_resource type="Texture2D" uid="uid://dqn8obqsmvers" path="res://Assets/Sprites/parque con hojas.png" id="3_eq6nc"]
 [ext_resource type="AudioStream" uid="uid://dvmfafycxqbvl" path="res://Assets/How Deep Is Your Love - Bee Gees.mp3" id="3_nmcpg"]
 [ext_resource type="Script" uid="uid://dos3qhffr4v0a" path="res://addons/rhythm_notifier/rhythm_notifier.gd" id="4_splo0"]
 
@@ -20,8 +21,13 @@ audio_stream_player = NodePath("..")
 running = true
 metadata/_custom_type_script = "uid://dos3qhffr4v0a"
 
+[node name="Parque" type="Sprite2D" parent="." unique_id=144678993]
+position = Vector2(576.25, 324.25)
+scale = Vector2(0.5986979, 0.6013889)
+texture = ExtResource("3_eq6nc")
+
 [node name="Perrito" type="Sprite2D" parent="." unique_id=121446372]
-position = Vector2(552.5, 308)
-scale = Vector2(0.867361, 0.766667)
+position = Vector2(582, 300)
+scale = Vector2(0.4, 0.37)
 texture = ExtResource("1_oabld")
 script = ExtResource("2_dgnvf")

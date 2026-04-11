@@ -1,10 +1,67 @@
 [gd_scene format=3 uid="uid://bjyuwp2jwxsd1"]
 
-[ext_resource type="Texture2D" uid="uid://4kdwyifscy7g" path="res://Assets/happy centro.png" id="1_oabld"]
 [ext_resource type="Script" uid="uid://dv2suatqi5hib" path="res://Perrito.gd" id="2_dgnvf"]
 [ext_resource type="Texture2D" uid="uid://dqn8obqsmvers" path="res://Assets/Sprites/parque con hojas.png" id="3_eq6nc"]
 [ext_resource type="AudioStream" uid="uid://dvmfafycxqbvl" path="res://Assets/How Deep Is Your Love - Bee Gees.mp3" id="3_nmcpg"]
+[ext_resource type="Texture2D" uid="uid://dfigyjvvlavb0" path="res://Assets/Sprites/frente.png" id="4_eq6nc"]
 [ext_resource type="Script" uid="uid://dos3qhffr4v0a" path="res://addons/rhythm_notifier/rhythm_notifier.gd" id="4_splo0"]
+[ext_resource type="Texture2D" uid="uid://8iatsrbjluj7" path="res://Assets/Sprites/frente ojos cerrados 1.png" id="6_vvxqx"]
+[ext_resource type="Texture2D" uid="uid://d0wev2250qfqo" path="res://Assets/Sprites/frente ojos cerrados 2.png" id="7_cdpnt"]
+[ext_resource type="Texture2D" uid="uid://b2jvjansqwh8q" path="res://Assets/Sprites/frente ojos cerrados 3.png" id="8_8u6ia"]
+[ext_resource type="Texture2D" uid="uid://chg4on854f0uh" path="res://Assets/Sprites/izq 1.png" id="9_6i7po"]
+[ext_resource type="Texture2D" uid="uid://csk0ra3etpgni" path="res://Assets/Sprites/der 1.png" id="9_8umsc"]
+[ext_resource type="Texture2D" uid="uid://dmgh8cereqrba" path="res://Assets/Sprites/der 2.png" id="10_7kmkt"]
+[ext_resource type="Texture2D" uid="uid://citl3iua4rgnn" path="res://Assets/Sprites/izq 2.png" id="10_e8087"]
+[ext_resource type="Texture2D" uid="uid://ceeud5yeyl7au" path="res://Assets/Sprites/izq 3.png" id="11_b3bg0"]
+[ext_resource type="Texture2D" uid="uid://7g2f303vkud7" path="res://Assets/Sprites/der 3.png" id="11_livpj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6i7po"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_eq6nc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vvxqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cdpnt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8u6ia")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8umsc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7kmkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_livpj")
+}],
+"loop": true,
+"name": &"derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_6i7po")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_e8087")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_b3bg0")
+}],
+"loop": true,
+"name": &"izquierda",
+"speed": 5.0
+}]
 
 [node name="Background" type="Node2D" unique_id=1324150852]
 
@@ -27,7 +84,11 @@ scale = Vector2(0.5986979, 0.6013889)
 texture = ExtResource("3_eq6nc")
 
 [node name="Perrito" type="Sprite2D" parent="." unique_id=121446372]
-position = Vector2(582, 300)
-scale = Vector2(0.4, 0.37)
-texture = ExtResource("1_oabld")
+position = Vector2(632, 510)
+scale = Vector2(0.928125, 0.9572223)
+texture = ExtResource("4_eq6nc")
 script = ExtResource("2_dgnvf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Perrito" unique_id=37221421]
+sprite_frames = SubResource("SpriteFrames_6i7po")
+animation = &"derecha"

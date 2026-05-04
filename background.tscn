@@ -30,8 +30,8 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_8u6ia")
 }],
-"loop": true,
-"name": &"default",
+"loop": false,
+"name": &"cierraOjos",
 "speed": 5.0
 }, {
 "frames": [{
@@ -91,4 +91,4 @@ script = ExtResource("2_dgnvf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Perrito" unique_id=37221421]
 sprite_frames = SubResource("SpriteFrames_6i7po")
-animation = &"derecha"
+animation = &"cierraOjos"

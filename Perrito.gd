@@ -1,6 +1,7 @@
 extends Sprite2D
 
 @onready var r: RhythmNotifier = $"../AudioStreamPlayer/RhythmNotifier"
+@onready var perrito: AnimatedSprite2D = $AnimatedSprite2D
 
 var speed = 400
 var angular_speed = PI#1.14
@@ -26,9 +27,11 @@ func rotateDog(beat):
 
 func musicCallback(beat):
 	count(beat)
-	if (beat % 2 == 0):
-		angular_speed = angular_speed * -1.
-		rotateDog(beat)
+	#if (beat % 2 == 0):
+		#angular_speed = angular_speed * -1.
+		#rotateDog(beat)
+	if (beat == 0):
+		perrito.play("cierraOjos")
 	
 func _play_some_music():
 	r.beats(1).connect(func(beat): musicCallback(beat))

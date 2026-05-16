@@ -32,7 +32,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"cierraOjos",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -44,9 +44,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_livpj")
 }],
-"loop": true,
+"loop": false,
 "name": &"derecha",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -58,9 +58,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_b3bg0")
 }],
-"loop": true,
+"loop": false,
 "name": &"izquierda",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [node name="Background" type="Node2D" unique_id=1324150852]
@@ -86,7 +86,6 @@ texture = ExtResource("3_eq6nc")
 [node name="Perrito" type="Sprite2D" parent="." unique_id=121446372]
 position = Vector2(632, 510)
 scale = Vector2(0.928125, 0.9572223)
-texture = ExtResource("4_eq6nc")
 script = ExtResource("2_dgnvf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Perrito" unique_id=37221421]

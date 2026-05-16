@@ -19,7 +19,7 @@ func _process(delta):
 	#print(typeof(delta))
 	
 func count(beat): 
-	print("Hello from beat %d!" % (beat))
+	print("beat * 10 = %d!" % (beat))
 	
 func rotateDog(beat):
 	prints(angular_speed, beat)
@@ -39,6 +39,17 @@ func musicCallback(beat):
 		perrito.stop()
 		perrito.play_backwards("izquierda")
 	if (beat == 40):
+		perrito.stop()
+		perrito.play_backwards("cierraOjos")
+	if (beat == 50):
+		perrito.stop()
+		perrito.play("cierraOjos")
+	if (beat == 60):
+		perrito.play("derecha")
+	if (beat == 70):
+		perrito.stop()
+		perrito.play_backwards("derecha")
+	if (beat == 80):
 		perrito.stop()
 		perrito.play_backwards("cierraOjos")
 	#var current_progress = perrito.get_frame()

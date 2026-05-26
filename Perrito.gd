@@ -3,57 +3,30 @@ extends Sprite2D
 @onready var r: RhythmNotifier = $"../AudioStreamPlayer/RhythmNotifier"
 @onready var perrito: AnimatedSprite2D = $AnimatedSprite2D
 
-var speed = 400
-var angular_speed = PI#1.14
-var GLOBAL_DELTA = 0.
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	_play_some_music()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	#print(delta)
-	#print(typeof(delta))
-	
-func count(beat): 
-	print("beat * 10 = %d!" % (beat))
-	
-func rotateDog(beat):
-	prints(angular_speed, beat)
-	#rotation += angular_speed / 2
-	rotation += angular_speed / 2
+func musicCallback(beat: int):
+	# Determine section
+	var is_chorus = (beat >= 88 and beat < 130) or \
+					(beat >= 184 and beat < 255) or \
+					(beat >= 280)
 
-func musicCallback(beat):
-	count(beat)
-	#if (beat % 2 == 0):
-		#angular_speed = angular_speed * -1.
-		#rotateDog(beat)
-	if (beat == 0):
-		perrito.play("cierraOjos")
-	if (beat == 20):
-		perrito.play("izquierda")
-	if (beat == 30):
-		perrito.stop()
-		perrito.play_backwards("izquierda")
-	if (beat == 40):
-		perrito.stop()
-		perrito.play_backwards("cierraOjos")
-	if (beat == 50):
-		perrito.stop()
-		perrito.play("cierraOjos")
-	if (beat == 60):
-		perrito.play("derecha")
-	if (beat == 70):
-		perrito.stop()
-		perrito.play_backwards("derecha")
-	if (beat == 80):
-		perrito.stop()
-		perrito.play_backwards("cierraOjos")
-	#var current_progress = perrito.get_frame()
-	#print(current_progress)
+	# Determine frequency based on section
+	var step = 2 if is_chorus else 4
 	
+	# Simple logic: On every 'step' beat, alternate the tug
+	if beat % step == 0:
+		if (beat / step) % 2 == 0:
+			perrito.play("izquierda")
+		else:
+			perrito.play("derecha")
+	
+	# Logic for eye-closing (e.g., close on the "1" of every 16-beat cycle)
+	if beat % 16 == 0:
+		perrito.play("cierraOjos")
+
 func _play_some_music():
-	r.beats(.1).connect(func(beat): musicCallback(beat))
+	# Note: RhythmNotifier emits the current beat count. 
+	# Ensure this matches your expected integer scale.
+	r.beats(1).connect(func(beat): musicCallback(int(beat * 10)))
